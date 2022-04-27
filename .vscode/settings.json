@@ -1,7 +1,7 @@
 {
   "extensions.showBuiltin": true,
   "redhat.telemetry.enabled": false,
-  "workbench.colorTheme": "Panda Syntax",
+  "workbench.colorTheme": "Athena Light",
   "editor.fontSize": 18,
   "git.autofetch": true,
   "python.insidersChannel": "off",
@@ -19,5 +19,8 @@
     "coverage.xml": true,
     ".pytest_cache": true
   },
-  "editor.mouseWheelZoom": true
+  "editor.mouseWheelZoom": true,
+  "cSpell.words": [
+    "NEIPA"
+  ]
 }
