@@ -1,8 +1,10 @@
 from typing import Optional
+
 import typer  # a biblioteca cria uma interface de CLI e utiliza type annotation
-from beerlog.core import add_beer_to_database, get_beers_from_database
-from rich.table import Table
 from rich.console import Console
+from rich.table import Table
+
+from beerlog.core import add_beer_to_database, get_beers_from_database
 
 # objeto main que é a instância da classe Typer
 main = typer.Typer(help="Beer Management Application")
@@ -19,7 +21,7 @@ def add(
 ):
     """Adds a new beer to database."""
     if add_beer_to_database(name, style, flavor, image, cost):
-        print("🍺 beer added to database" )
+        print("🍺 beer added to database")
 
 
 @main.command("list")
