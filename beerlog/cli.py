@@ -10,6 +10,7 @@ from beerlog.core import add_beer_to_database, get_beers_from_database
 main = typer.Typer(help="Beer Management Application")
 console = Console()
 
+
 # capturar comandos, ler os atributos
 @main.command("add")
 def add(
