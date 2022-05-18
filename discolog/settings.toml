@@ -1,0 +1,4 @@
+name = "discolog"
+
+[database]
+url = "sqlite:///discolog.db"

@@ -1,4 +1,4 @@
-from beerlog.core import get_beers_from_database, add_beer_to_database
+from discolog.core import get_beers_from_database, add_beer_to_database
 
 # assert -> assegurar que a chamada da função é verdadeira
 def test_add_beer_to_database():

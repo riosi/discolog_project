@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from beerlog.api import api
+from discolog.api import api
 
 client = TestClient(api)
 
