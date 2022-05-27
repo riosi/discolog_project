@@ -27,7 +27,7 @@ def add_album_to_database(
     return True
 
 
-# def get_albums_from_database() -> List[Album]:
-#     with get_session() as session:
-#         sql = select(Album)  # select * from album;
-#         return list(session.exec(sql))
+def get_albums_from_database() -> List[Album]:
+     with get_session() as session:
+         sql = select(Album)  # select * from album;
+         return list(session.exec(sql))

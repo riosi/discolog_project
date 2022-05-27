@@ -27,16 +27,15 @@ def add(
     else:
         print("Cannot add album.")
 
-# @main.command("list")
-# def list_albums():
-#     """Lists albums in database."""
-#     albums = get_albums_from_database()
-#     table = Table(title="Discolog :cd:")
-#     headers = ["id", "name", "artist", "year", "rate", "review", "date"]
-#     for header in headers:
-#         table.add_column(header, style="magenta")
-#     for album in albums:
-#         album.date = album.date.strftime("%Y-%m-%d")
-#         values = [str(getattr(album, header)) for header in headers]
-#         table.add_row(*values)
-#     console.print(table)
+@main.command("list")
+def list_albums():
+    """Lists albums in database."""
+    albums = get_albums_from_database()
+    table = Table(title="Discolog :cd:")
+    headers = ["id", "name", "artist", "year", "rate", "review", "date"]
+    for header in headers:
+        table.add_column(header, style="magenta")
+    for album in albums:
+        values = [str(getattr(album, header)) for header in headers]
+        table.add_row(*values)
+    console.print(table)
