@@ -23,19 +23,20 @@ def add(
 ):
     """Adds a new album to the database"""
     if add_album_to_database(name, artist, year, rate, review):
-        print("Album added!!")
+        print(":cd: Album added!!")
     else:
         print("Cannot add album.")
 
 @main.command("list")
-def list_albums():
+def list_albums(artist: Optional[str] = None):
     """Lists albums in database."""
     albums = get_albums_from_database()
-    table = Table(title="Discolog :cd:")
+    table = Table(title="Discolog :cd:", show_lines=True)
     headers = ["id", "name", "artist", "year", "rate", "review", "date"]
     for header in headers:
         table.add_column(header, style="magenta")
     for album in albums:
+        album.date = album.date.strftime("%Y-%m-%d")
         values = [str(getattr(album, header)) for header in headers]
         table.add_row(*values)
     console.print(table)
