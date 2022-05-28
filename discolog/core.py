@@ -1,5 +1,7 @@
 # salvar informações no banco de dados
 from typing import List, Optional
+from webbrowser import get
+from sqlalchemy import delete
 
 from sqlmodel import select
 
@@ -31,3 +33,11 @@ def get_albums_from_database() -> List[Album]:
      with get_session() as session:
          sql = select(Album)  # select * from album;
          return list(session.exec(sql))
+
+
+def delete_album_from_database(id) -> bool:
+    with get_session() as session:
+        sql = delete(Album).where(Album.id == id)
+        session.exec(sql)
+        session.commit()
+    return True

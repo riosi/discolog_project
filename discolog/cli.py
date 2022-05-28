@@ -5,7 +5,7 @@ from rich.console import Console
 from rich.table import Table
 from rich import print
 
-from discolog.core import add_album_to_database, get_albums_from_database
+from discolog.core import add_album_to_database, delete_album_from_database, get_albums_from_database
 
 # objeto main que é a instância da classe Typer
 main = typer.Typer(help="Album Review Application")
@@ -40,3 +40,12 @@ def list_albums(artist: Optional[str] = None):
         values = [str(getattr(album, header)) for header in headers]
         table.add_row(*values)
     console.print(table)
+
+
+@main.command("delete")
+def delete_album(id):
+    """Deletes album from database"""
+    if delete_album_from_database(id):
+        print("Album deleted successfully!")
+    else:
+        print("Oops, something went wrong!")

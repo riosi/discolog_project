@@ -5,7 +5,6 @@ from pydantic import BaseModel, validator
 
 
 class AlbumOut(BaseModel):
-    # optional faz com que o próprio sql nos dê um id automático
     id: int
     name: str
     artist: str
@@ -30,3 +29,11 @@ class AlbumIn(BaseModel):
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
         return v
+
+
+class AlbumEdit(BaseModel):
+    name: str
+    artist: str
+    year: int
+    rate: int
+    review: str

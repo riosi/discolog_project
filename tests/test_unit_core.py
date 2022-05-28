@@ -1,14 +1,14 @@
-from discolog.core import get_beers_from_database, add_beer_to_database
+from discolog.core import get_albums_from_database, add_album_to_database
 
 # assert -> assegurar que a chamada da função é verdadeira
-def test_add_beer_to_database():
-    assert add_beer_to_database("Blue Moon", "Witbier", 10, 3, 6)
+def test_add_album_to_database():
+    assert add_album_to_database("Alone in the City", "Dreamcatcher", 2019, 9, "O problema é que acaba")
 
 
-def test_get_beers_from_database():
+def test_get_albums_from_database():
     # Arrange
-    add_beer_to_database("Blue Moon", "Witbier", 10, 3, 6)
+    add_album_to_database("Alone in the City", "Dreamcatcher", 2019, 9, "O problema é que acaba")
     # Act
-    results = get_beers_from_database()
+    results = get_albums_from_database()
     # Assert
     assert len(results) > 0
